@@ -1,0 +1,22 @@
+plugins { id 'com.android.application' }
+def testManifest = layout.buildDirectory.file('ui-manifest.xml').get().asFile
+testManifest.parentFile.mkdirs()
+testManifest.text = file('src/main/AndroidManifest.xml').text.replace(' package="org.localsend.rebuilt"','').replaceAll('<uses-sdk[^>]*/>','')
+android {
+    namespace 'org.localsend.rebuilt'
+    compileSdk 36
+    defaultConfig { applicationId 'org.localsend.rebuilt'; minSdk 26; targetSdk 36; versionCode 7; versionName '1.6.0' }
+    sourceSets.main.manifest.srcFile testManifest
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    testOptions { unitTests.includeAndroidResources=true }
+}
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.17'
+}
+tasks.withType(Test).configureEach {
+    maxHeapSize='3g'
+    systemProperty 'robolectric.dependency.repo.url','https://repo.maven.apache.org/maven2'
+    systemProperty 'ui.output',rootProject.layout.projectDirectory.dir('test-output/native-ui').asFile.absolutePath
+    testLogging { events 'passed','failed','skipped'; exceptionFormat 'full'; showStandardStreams=true }
+}

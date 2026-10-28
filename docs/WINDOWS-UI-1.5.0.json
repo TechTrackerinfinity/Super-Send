@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "checks": [
+    "New name/logo are present and first launch has no firewall setup dialog or exposed firewall actions",
+    "Removed controls stay absent across receive/settings, connected/unconnected, both themes and three window sizes",
+    "Connect Android phone opens the usable HTTPS pairing form",
+    "Observed MB/s and final averages render in both themes and two sizes; approval has no speed, progress preserves focus, cards do not overflow",
+    "Complete real send, receive, approval and history workflow passes in the branded UI"
+  ],
+  "layouts": [
+    "light/connect/receive/regular",
+    "light/connect/receive/compact",
+    "light/connect/receive/zoomed",
+    "light/connect/settings/regular",
+    "light/connect/settings/compact",
+    "light/connect/settings/zoomed",
+    "light/connected/receive/regular",
+    "light/connected/receive/compact",
+    "light/connected/receive/zoomed",
+    "light/connected/settings/regular",
+    "light/connected/settings/compact",
+    "light/connected/settings/zoomed",
+    "dark/connect/receive/regular",
+    "dark/connect/receive/compact",
+    "dark/connect/receive/zoomed",
+    "dark/connect/settings/regular",
+    "dark/connect/settings/compact",
+    "dark/connect/settings/zoomed",
+    "dark/connected/receive/regular",
+    "dark/connected/receive/compact",
+    "dark/connected/receive/zoomed",
+    "dark/connected/settings/regular",
+    "dark/connected/settings/compact",
+    "dark/connected/settings/zoomed"
+  ],
+  "speedChecks": [
+    {
+      "theme": "light",
+      "size": "regular",
+      "liveLabel": "21.1 MB/s",
+      "averageLabel": "1 item\n47.7 MB\nJust now\n32.2 MB/s avg",
+      "passed": true,
+      "evidence": "Simulated byte progress over a real one-second wait; rendering validation only, not measured file throughput"
+    },
+    {
+      "theme": "light",
+      "size": "compact",
+      "liveLabel": "21.2 MB/s",
+      "averageLabel": "1 item\n47.7 MB\nJust now\n32.5 MB/s avg",
+      "passed": true,
+      "evidence": "Simulated byte progress over a real one-second wait; rendering validation only, not measured file throughput"
+    },
+    {
+      "theme": "dark",
+      "size": "regular",
+      "liveLabel": "19.6 MB/s",
+      "averageLabel": "1 item\n47.7 MB\nJust now\n32.2 MB/s avg",
+      "passed": true,
+      "evidence": "Simulated byte progress over a real one-second wait; rendering validation only, not measured file throughput"
+    },
+    {
+      "theme": "dark",
+      "size": "compact",
+      "liveLabel": "21.1 MB/s",
+      "averageLabel": "1 item\n47.7 MB\nJust now\n32.4 MB/s avg",
+      "passed": true,
+      "evidence": "Simulated byte progress over a real one-second wait; rendering validation only, not measured file throughput"
+    }
+  ],
+  "scope": "Real packaged UI; connection-status and simulated speed-display fixtures, no Windows firewall calls; full real loopback workflow. Simulated speed labels are not throughput benchmark results."
+}

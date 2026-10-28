@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'">
+    <meta name="color-scheme" content="light dark">
+    <title>Super Send</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="polished.css">
+  </head>
+  <body>
+    <div class="app-shell" id="app">
+      <aside class="navigation" aria-label="Main navigation">
+        <div class="brand-mark" title="Super Send"><img src="assets/logo.png" alt="Super Send"></div>
+        <nav id="navigation"></nav>
+        <div class="rail-footer"><span class="local-indicator"></span><span>GO LOCAL.</span></div>
+      </aside>
+      <main class="main-area">
+        <header class="app-header">
+          <div class="wordmark">Super<span class="wordmark-accent">Send</span><span class="rebuild-label">LOCAL TRANSFER</span></div>
+          <div id="network-status" class="network-status" role="status" aria-live="polite"><span class="status-dot"></span>Starting up</div>
+        </header>
+        <div class="page-scroll" id="page-scroll"><div id="page" class="page"><div class="startup-state"><div class="loading-spinner"></div><h1>Getting ready</h1><p>Connecting to your local network…</p></div></div></div>
+        <footer class="app-footer"><span id="footer-device">Fast connections. Your devices.</span><span class="footer-local" id="footer-protocol"></span></footer>
+      </main>
+    </div>
+    <div class="drop-overlay" id="drop-overlay" hidden><div class="drop-overlay-card"><span class="drop-big">↓</span><h2>Drop to share</h2><p>Your files stay on your local network.</p></div></div>
+    <div id="modal-root"></div>
+    <div id="toast-root" class="toast-root" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

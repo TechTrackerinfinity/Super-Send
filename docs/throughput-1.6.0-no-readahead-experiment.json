@@ -1,0 +1,210 @@
+{
+  "label": "candidate-no-readahead-large",
+  "startedAt": "2026-10-25T05:04:25.573Z",
+  "scope": "Windows loopback Node-to-JVM transport benchmark; no physical Android phone or Wi-Fi was measured",
+  "measurement": "Approval to successful completion at both peers; includes TLS setup, file write close, and final saved acknowledgment. Source generation and post-transfer SHA-256 verification are excluded. No fsync/durable-media claim.",
+  "fixture": {
+    "bytes": 536870912,
+    "fileBytes": 536870912,
+    "fileCount": 1,
+    "mibPerFile": 512,
+    "generation": "AES-256-CTR of zero blocks using a fixed public test seed; no compression",
+    "sha256": "711e9ab0ec4b2554e3b0ed15765460b17ef6ec3f3a5580fb1c26f07f237c93f7"
+  },
+  "environment": {
+    "platform": "win32",
+    "release": "10.0.26300",
+    "arch": "x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i7-13700HX",
+    "logicalCpus": 24,
+    "node": "v24.11.1",
+    "java": "openjdk version \"17.0.20.1\" 2026-08-18 LTS\r\nOpenJDK Runtime Environment Microsoft-14940689 (build 17.0.20.1+1-LTS)\r\nOpenJDK 64-Bit Server VM Microsoft-14940689 (build 17.0.20.1+1-LTS, mixed mode, sharing)"
+  },
+  "warmupsPerDirection": 1,
+  "measuredRunsPerDirection": 3,
+  "sources": {
+    "service.js": {
+      "source": "<project>\\src\\service.js",
+      "sha256": "bd15144421fe67693e02e21441c323c96f1e09f4a57a21e92c7d001dc72ac658"
+    },
+    "reverse-receiver.js": {
+      "source": "<project>\\src\\reverse-receiver.js",
+      "sha256": "e2de7fbe9cef315822aaa5cc87e6258db38acfd308e9a190b92242805f448d26"
+    },
+    "certificate.js": {
+      "source": "<project>\\src\\certificate.js",
+      "sha256": "5ac1a865d1867fb7cc3b4c33f3037fd2b50dea97e63927525d841d7b10f34f4f"
+    },
+    "transfer-pool.js": {
+      "source": "<project>\\src\\transfer-pool.js",
+      "sha256": "eedf72afcb87bf546050e25de9a03460bf7460bee49b7424f90071026c82535e"
+    },
+    "TransferEngine.java": {
+      "source": "<project>\\test-output\\speed-no-readahead-source\\TransferEngine.java",
+      "sha256": "094a640cad62930c721271d22d3f193fd58df9717c5b232963d5fc3ca6098279"
+    },
+    "EngineHarness.java": {
+      "source": "<project>\\android\\test\\EngineHarness.java",
+      "sha256": "801e8d73f10118d7428735f870f3428995355707da38c40ae88fd607ea3a657a"
+    }
+  },
+  "results": [
+    {
+      "mode": "pc-to-java",
+      "warmup": true,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2455.9837999999995,
+      "megabytesPerSecond": 218.59709009481256,
+      "mebibytesPerSecond": 208.47043046456582,
+      "checksumVerified": true
+    },
+    {
+      "mode": "pc-to-java",
+      "warmup": false,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2689.783700000001,
+      "megabytesPerSecond": 199.59631400844603,
+      "mebibytesPerSecond": 190.349878319212,
+      "checksumVerified": true
+    },
+    {
+      "mode": "pc-to-java",
+      "warmup": false,
+      "run": 2,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2255.494200000001,
+      "megabytesPerSecond": 238.0280614332769,
+      "mebibytesPerSecond": 227.00124877288522,
+      "checksumVerified": true
+    },
+    {
+      "mode": "pc-to-java",
+      "warmup": false,
+      "run": 3,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2270.634299999998,
+      "megabytesPerSecond": 236.44094163467912,
+      "mebibytesPerSecond": 225.48765338390265,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-direct",
+      "warmup": true,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2792.4572000000007,
+      "megabytesPerSecond": 192.2575257375475,
+      "mebibytesPerSecond": 183.35106443171264,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-direct",
+      "warmup": false,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2038.4049000000014,
+      "megabytesPerSecond": 263.3779540070766,
+      "mebibytesPerSecond": 251.17679024417555,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-direct",
+      "warmup": false,
+      "run": 2,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 3960.319299999999,
+      "megabytesPerSecond": 135.56253204129274,
+      "mebibytesPerSecond": 129.28250507478023,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-direct",
+      "warmup": false,
+      "run": 3,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 2647.8339000000014,
+      "megabytesPerSecond": 202.75853103927693,
+      "mebibytesPerSecond": 193.36560348441785,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-reverse",
+      "warmup": true,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 5839.222999999998,
+      "megabytesPerSecond": 91.94218340351108,
+      "mebibytesPerSecond": 87.68289890624149,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-reverse",
+      "warmup": false,
+      "run": 1,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 4897.467599999996,
+      "megabytesPerSecond": 109.62214676009299,
+      "mebibytesPerSecond": 104.54382587441731,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-reverse",
+      "warmup": false,
+      "run": 2,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 4724.417600000001,
+      "megabytesPerSecond": 113.63748031080061,
+      "mebibytesPerSecond": 108.37314635353148,
+      "checksumVerified": true
+    },
+    {
+      "mode": "java-to-pc-reverse",
+      "warmup": false,
+      "run": 3,
+      "bytes": 536870912,
+      "fileCount": 1,
+      "elapsedMs": 4489.208699999996,
+      "megabytesPerSecond": 119.59143534583289,
+      "mebibytesPerSecond": 114.05128035147943,
+      "checksumVerified": true
+    }
+  ],
+  "summaries": {
+    "pc-to-java": {
+      "runs": 3,
+      "medianMBps": 236.44094163467912,
+      "minMBps": 199.59631400844603,
+      "maxMBps": 238.0280614332769,
+      "aggregateMBps": 223.20292866091137
+    },
+    "java-to-pc-direct": {
+      "runs": 3,
+      "medianMBps": 202.75853103927693,
+      "minMBps": 135.56253204129274,
+      "maxMBps": 263.3779540070766,
+      "aggregateMBps": 186.27212323941936
+    },
+    "java-to-pc-reverse": {
+      "runs": 3,
+      "medianMBps": 113.63748031080061,
+      "minMBps": 109.62214676009299,
+      "maxMBps": 119.59143534583289,
+      "aggregateMBps": 114.13804963766847
+    }
+  },
+  "finishedAt": "2026-10-25T05:05:26.486Z",
+  "success": true
+}

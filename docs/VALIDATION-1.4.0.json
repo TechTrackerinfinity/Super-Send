@@ -1,0 +1,65 @@
+{
+  "product": "Super Send",
+  "version": "1.4.0",
+  "date": "2026-10-17",
+  "nodeTests": {
+    "passed": 26,
+    "failed": 0
+  },
+  "javaNodeInterop": {
+    "passed": 24,
+    "failed": 0,
+    "scope": "Direct and PC-initiated transfers; blocked PC inbound from pairing; approval, cancellation, certificates/tokens, restart reconnection"
+  },
+  "packagedWindowsLayout": {
+    "checks": 36,
+    "passed": true
+  },
+  "packagedBrandConnectionUi": {
+    "scenarios": 4,
+    "layouts": 24,
+    "passed": true,
+    "removedControls": [
+      "Configure receiving",
+      "Check status",
+      "Open Windows Firewall"
+    ],
+    "firewallIpcRemoved": true,
+    "firstRunFirewallDialogRemoved": true
+  },
+  "androidNativeUi": {
+    "tests": 7,
+    "failures": 0,
+    "sdk": 35,
+    "renderedLayoutCombinations": 32,
+    "idleBrandViewsBothThemes": true
+  },
+  "upgradeIdentity": {
+    "androidApplicationId": "org.localsend.rebuilt",
+    "androidVersionCode": 4,
+    "apkSignerSha256": "0a704156883984de2cb788aac20a5bd366e6333462b3658c8c79d9913a82cb67",
+    "windowsDataDirectoryRetained": "%APPDATA%/LocalSend Rebuilt",
+    "windowsProductMetadata": "Super Send 1.4.0"
+  },
+  "boundaries": {
+    "physicalPhoneVerified": false,
+    "installerExecutedOnUserMachine": false,
+    "windowsAuthenticodeSigned": false,
+    "hostFirewallChanged": false,
+    "independentSecurityAudit": false
+  },
+  "sha256": {
+    "src/main.js": "85ce4be98528c903e07fd57a4be050a962542b39f2651011c8da0baaf1b4693f",
+    "src/preload.js": "52b6e8956641ee694dbb933db3c723af6a5fcae35139c5ab9dfa2bb035755697",
+    "src/service.js": "c4806cb0073e532442402b197dfc7886b2d79fba58f5b00ee5018f5dd894a24d",
+    "src/reverse-receiver.js": "bad965e8572999eed56ddf1be63f11ab39f29b74bb34133561e5c0d6df3b494b",
+    "renderer/app.js": "096418d68fb0233f97a54ebe157966f3b26eb75a3fe60167f72ab55739b542a2",
+    "renderer/index.html": "84bcf87f97ea28ad69867601c924a9e85e3344377b47986677a98fb85d473673",
+    "renderer/polished.css": "646200143b44c3b527a24ef4336416b6173e9f4a37981c36fd6a4cc91b5f0300",
+    "renderer/assets/logo.png": "9028ba15f1d9a0160896e706707d02f9403b30947437f80518ec7ea87e1da06c",
+    "renderer/assets/super-send.ico": "6a8a57c2c1a8de6d0508e88792693111bbdd874cfd56857ad041ae29c1a280f9",
+    "android/app/src/main/java/org/localsend/rebuilt/MainActivity.java": "2c9783566338e2b103a855651e3426c49af12cba3f7da15c07078f4133919e41",
+    "android/app/src/main/java/org/localsend/rebuilt/TransferEngine.java": "59e66e1cd0a65043af82cf06efd2375e216a85d2192dc800e59942033b535f85",
+    "release/Super-Send-Android-1.4.0.apk": "478ee0dfbd3e4973e2d684c7c0c9f24cf6d2d5359320aba8aab4988316cb4a7b"
+  }
+}

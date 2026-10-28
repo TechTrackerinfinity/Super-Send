@@ -1,0 +1,20 @@
+{
+  "name": "super-send",
+  "version": "1.6.0",
+  "description": "Super Send \u2014 private local file sharing for Windows and Android.",
+  "private": true,
+  "main": "src/main.js",
+  "scripts": {
+    "setup": "install-electron",
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/service.js && node --check src/reverse-receiver.js && node --check src/transfer-pool.js && node --check src/main.js && node --check src/preload.js && node --check src/windows-network.js && node --check renderer/app.js && node --check scripts/installer.js",
+    "package": "node scripts/package.js",
+    "installer": "node scripts/installer.js",
+    "test:firewall": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File test/network-policy.test.ps1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "44.8.0"
+  }
+}

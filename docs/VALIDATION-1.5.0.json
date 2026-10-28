@@ -1,0 +1,84 @@
+{
+  "product": "Super Send",
+  "version": "1.5.0",
+  "date": "2026-10-17",
+  "syntax": {
+    "passed": true
+  },
+  "nodeTests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "javaNodeInterop": {
+    "passed": 24,
+    "failed": 0,
+    "scope": "Exact Android engine and PC service; direct and PC-initiated TLS, approval, checksum, binary/empty/UTF-8, cancellation, tokens, certificates, restart",
+    "testHarnessRepair": "Wait for the named new request, avoiding stale coalesced approval snapshots after fast uploads"
+  },
+  "androidNativeUi": {
+    "tests": 9,
+    "failures": 0,
+    "sdk": 35,
+    "scope": "Native views, 32 size/theme/page combinations, speed units, initial sampling, stalled rate, pause/resume, stable controls and scrolling"
+  },
+  "packagedWindowsUi": {
+    "passed": true,
+    "scenarios": 5,
+    "layouts": 24,
+    "simulatedSpeedRenderingCases": 4,
+    "realLoopbackTransferWorkflow": true,
+    "physicalPhoneThroughputEvidence": false
+  },
+  "throughput": {
+    "scope": "Windows loopback only, shipping Node service and Java transport source; not a physical Android phone or Wi-Fi",
+    "fixtureBytes": 536870912,
+    "warmupsPerDirection": 1,
+    "measuredRunsPerDirectionPerBatch": 3,
+    "optimizedBatches": 2,
+    "allOptimizedMeasuredRunsAbove100DecimalMBps": true,
+    "destinationSha256Verified": true,
+    "repeatOptimizedMedianMBps": {
+      "pcToJava": 392.6733610777081,
+      "javaToPcDirect": 273.30505515497106,
+      "javaToPcReverse": 246.093985767855
+    },
+    "reports": [
+      "throughput-baseline-1.4.json",
+      "throughput-optimized-1.5.json",
+      "throughput-baseline-confirm-1.4.json",
+      "throughput-optimized-confirm-1.5.json"
+    ]
+  },
+  "observedAdapter": {
+    "ethernet": "Disconnected",
+    "wifiReceiveBitsPerSecond": 1201000000,
+    "wifiTransmitBitsPerSecond": 576000000,
+    "ratesMayChange": true,
+    "networkSettingsChanged": false
+  },
+  "upgradeIdentity": {
+    "androidApplicationId": "org.localsend.rebuilt",
+    "androidVersionCode": 5,
+    "apkSignerSha256": "0a704156883984de2cb788aac20a5bd366e6333462b3658c8c79d9913a82cb67",
+    "windowsDataDirectoryRetained": "%APPDATA%/LocalSend Rebuilt"
+  },
+  "boundaries": {
+    "physicalPhoneThroughputVerified": false,
+    "requestedActualPcPhone100MBpsMinimumVerified": false,
+    "installerExecutedOnUserMachine": false,
+    "windowsAuthenticodeSigned": false,
+    "hostFirewallChanged": false,
+    "independentSecurityAudit": false
+  },
+  "sha256": {
+    "src/service.js": "ddd9be3aedd30dcce268d8e881fafadd5997cfdcc7b90f28d9bf18b004c871c7",
+    "src/reverse-receiver.js": "41be3dc3a5a061dcd2f1b52d020b42b98b1645b0d63dcf68c8513b4b8434f45b",
+    "renderer/app.js": "57d58a7c9647ff75161cb0839375a286f5e244dc8a117bff2d8c3fb1624949ee",
+    "src/main.js": "85ce4be98528c903e07fd57a4be050a962542b39f2651011c8da0baaf1b4693f",
+    "src/preload.js": "52b6e8956641ee694dbb933db3c723af6a5fcae35139c5ab9dfa2bb035755697",
+    "android/app/src/main/java/org/localsend/rebuilt/TransferEngine.java": "462fea6195b6ca9a11f5e7478818b891cac97980ef98f73b7a835e7d4832ab62",
+    "android/app/src/main/java/org/localsend/rebuilt/MainActivity.java": "9a495069e9cf60ebba0803b91780695134b50470ece26334e8d811d33ac32bee",
+    "scripts/benchmark-throughput.js": "0b1d2857a04f2c19a982458970407bab3bccd849e3d3f5b260bc7fbd529692b6",
+    "release/Super-Send-Android-1.5.0.apk": "c2a70b32d3f07729baeff4503cc67b85429a5d557ee993343ef29436f1764fc4"
+  }
+}

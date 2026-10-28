@@ -1,0 +1,8 @@
+build/
+signing/
+test-output/
+tools/
+*.log
+.gradle/
+app/build/
+local.properties

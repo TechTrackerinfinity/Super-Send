@@ -1,0 +1,26 @@
+{
+  "product": "Super Send",
+  "version": "1.5.1",
+  "focus": "Recover discovery after changing from Wi-Fi to an Android phone hotspot.",
+  "changes": [
+    "Windows refreshes UDP multicast membership before every announcement and transmits through every active IPv4 adapter.",
+    "Android refreshes multicast membership every ten seconds and attempts hotspot adapters even when their multicast capability flag is inaccurate.",
+    "Stale adapter memberships are removed when the active network changes."
+  ],
+  "verification": [
+    {"name": "Node syntax checks", "command": "npm run check", "result": "passed"},
+    {"name": "Node test suite", "command": "npm test", "result": "passed: 36 tests", "coverage": "Includes a regression test that moves discovery from 192.168.1.20 to hotspot address 192.168.43.72."},
+    {"name": "Android/Windows transport interoperability", "command": "C:\\Python313\\python.exe android/scripts/test-engine.py", "result": "passed: 24 tests", "coverage": "Mutual TLS, approval, direct transfers, reverse receiving, cancellation, integrity, and PC restart."},
+    {"name": "Signed APK build", "command": "C:\\Python313\\python.exe android/scripts/build.py", "result": "passed"},
+    {"name": "APK package metadata", "command": "aapt dump badging", "result": "passed: org.localsend.rebuilt, versionCode 6, versionName 1.5.1"},
+    {"name": "APK signature and alignment", "command": "apksigner verify and zipalign -c", "result": "passed: APK Signature Schemes v2 and v3"},
+    {"name": "Windows package and installer", "command": "npm run package; npm run installer", "result": "passed"},
+    {"name": "Packaged Windows UI workflow", "command": "Super Send.exe with LOCALSEND_UI_SMOKE", "result": "passed", "coverage": "Renderer startup, selection, manual HTTPS registration, actual send/receive approval, history, and dark theme."}
+  ],
+  "artifacts": {
+    "windows": ["release/Super-Send-1.5.1-Windows-Setup.exe", "release/Super-Send-1.5.1-Windows-x64.zip"],
+    "android": {"path": "release/Super-Send-Android-1.5.1.apk", "sha256": "82f996712ac41c84c43e5eeae24e038e3d6c204ad4c58c14276fdb3cdcbe0751"},
+    "checksums": "release/SHA256SUMS-Super-Send-1.5.1.txt"
+  },
+  "physical_device_boundary": "Automated checks cannot prove multicast forwarding in a particular phone hotspot firmware. Install both 1.5.1 updates, connect the PC to the phone hotspot, wait up to ten seconds or press Refresh, and test one small file in each direction."
+}

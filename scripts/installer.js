@@ -1,0 +1,24 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+const {spawnSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..');
+const version=require('../package.json').version;
+const payload=path.join(root,'release',`Super-Send-${version}-win32-x64`);
+const output=path.join(root,'release',`Super-Send-${version}-Windows-Setup.exe`);
+const build=path.join(root,'build','installer');
+const compiler=process.env.NSIS_HOME?path.join(process.env.NSIS_HOME,'makensis.exe'):path.join(root,'tools','nsis-3.12','nsis-3.12','makensis.exe');
+if(!fs.existsSync(compiler))throw new Error('Set NSIS_HOME to an extracted NSIS 3.12 directory.');
+if(!fs.existsSync(path.join(payload,'Super Send.exe')))throw new Error('Run npm run package first.');
+if(fs.existsSync(output))throw new Error('Installer already exists. Move it before rebuilding.');
+fs.mkdirSync(build,{recursive:true});
+const files=[],directories=[];
+function walk(directory){for(const item of fs.readdirSync(directory,{withFileTypes:true})){if(['data','received'].includes(item.name))continue;const target=path.join(directory,item.name);if(item.isDirectory()){walk(target);directories.push(path.relative(payload,target));}else files.push(path.relative(payload,target));}}
+walk(payload);
+const quote=s=>s.replaceAll('$','$$').replaceAll('"','$\\"');
+const uninstall=path.join(build,'uninstall-files.nsh');
+fs.writeFileSync(uninstall,[...files.map(file=>`Delete "$INSTDIR\\${quote(file)}"`),...directories.map(directory=>`RMDir "$INSTDIR\\${quote(directory)}"`)].join('\n'));
+const result=spawnSync(compiler,['/V2',`/DPROJECT_ROOT=${root}`,`/DAPP_VERSION=${version}`,`/DPAYLOAD=${payload}`,`/DOUTPUT=${output}`,`/DUNINSTALL_FILES=${uninstall}`,path.join(__dirname,'installer.nsi')],{stdio:'inherit',windowsHide:true});
+if(result.error)throw result.error;
+if(result.status!==0)process.exit(result.status||1);
+console.log(output);

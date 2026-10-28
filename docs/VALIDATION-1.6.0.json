@@ -1,0 +1,82 @@
+{
+  "version": "1.6.0",
+  "validatedDate": "2026-10-25",
+  "syntaxCheck": "passed",
+  "windowsServiceTests": {
+    "passed": 39,
+    "failed": 0,
+    "log": "test-output/release-1.6.0-node-tests.log"
+  },
+  "androidPcInteropTests": {
+    "passed": 33,
+    "failed": 0,
+    "log": "test-output/release-1.6.0-interop-tests.log"
+  },
+  "packagedUi": {
+    "passed": true,
+    "checks": [
+      "renderer bridge startup",
+      "receive device identity",
+      "send navigation",
+      "add text via form and IPC",
+      "settings alias persisted",
+      "manual HTTPS device registration",
+      "send via peer card and verify saved message",
+      "receive through actual approval modal",
+      "history navigation",
+      "dark theme"
+    ],
+    "screenshots": [
+      "receive.png",
+      "send.png",
+      "settings.png",
+      "incoming.png",
+      "history.png",
+      "dark.png"
+    ]
+  },
+  "benchmarks": {
+    "large": "throughput-1.6.0-large.json",
+    "batch": "throughput-1.6.0-batch.json",
+    "stress": "throughput-1.6.0-stress.json",
+    "stressBatches": 30,
+    "stressFiles": 1920,
+    "allSuccessfulDestinationChecksumsVerified": true,
+    "earlyConnectionFailures": 2,
+    "earlyFailureCause": "Not conclusively identified; subsequent diagnostic and 30-batch stress runs passed without retries."
+  },
+  "android": {
+    "package": "org.localsend.rebuilt",
+    "versionCode": 7,
+    "minSdk": 26,
+    "targetSdk": 36,
+    "signaturesVerified": [
+      "v2",
+      "v3"
+    ],
+    "zipAlignment": "passed",
+    "sameSignerAs1_5_1": true,
+    "certificateSha256": "0a704156883984de2cb788aac20a5bd366e6333462b3658c8c79d9913a82cb67",
+    "apkSha256": "c614f858e38ee9b51369a2e74a56dadcca7d7de8d609e4aa4077e59942c2425a"
+  },
+  "windows": {
+    "productName": "Super Send",
+    "productVersion": "1.6.0",
+    "userDataExcluded": true,
+    "unsigned": true
+  },
+  "sourceSha256": {
+    "src/service.js": "b13e8f1c2672ff4c2e548d18ba305d15968192c07c0765a38e164b57029f885e",
+    "src/reverse-receiver.js": "e2de7fbe9cef315822aaa5cc87e6258db38acfd308e9a190b92242805f448d26",
+    "src/transfer-pool.js": "eedf72afcb87bf546050e25de9a03460bf7460bee49b7424f90071026c82535e",
+    "src/certificate.js": "5ac1a865d1867fb7cc3b4c33f3037fd2b50dea97e63927525d841d7b10f34f4f",
+    "android/app/src/main/java/org/localsend/rebuilt/TransferEngine.java": "f0398c35a201e96ea605a18e42bac1cac5ac7658121116cabd669e7392a8c1ad"
+  },
+  "notVerified": [
+    "Physical POCO F6 throughput or APK installation",
+    "Wi-Fi throughput",
+    "Windows installer execution/update/uninstall",
+    "Power-loss durability"
+  ],
+  "artifactChecksums": "release/RELEASE-1.6.0.json and adjacent .sha256 files"
+}
